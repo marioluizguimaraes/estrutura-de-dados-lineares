@@ -66,9 +66,21 @@ public class Main {
         }
 
         try {
+            piha.popBlack();
+        } catch (PilhaVaziaException e) {
+            System.out.println("Exceção esperada (pop preto vazio): " + e.getMessage());
+        }
+
+        try {
             piha.topBlack();
         } catch (PilhaVaziaException e) {
             System.out.println("Exceção esperada (preta): " + e.getMessage());
+        }
+
+        try {
+            piha.topRed();
+        } catch (PilhaVaziaException e) {
+            System.out.println("Exceção esperada (topo vermelho vazio): " + e.getMessage());
         }
 
         System.out.println("\nExecução finalizada com sucesso.");
